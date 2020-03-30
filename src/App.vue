@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header/>
+    <Slider
+      :slider_data="sliderItems"
+      />
+    <Footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Slider from './components/Slider.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    Footer,
+    Slider
+  },
+  data() {
+    return {
+      sliderItems: [
+        { id: 1, name: 'img1', img: 'logo.png' },
+        { id: 1, name: 'img1', img: 'logo.png' },
+        { id: 1, name: 'img1', img: 'logo.png' },
+        { id: 1, name: 'img1', img: 'logo.png' }
+      ]
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
