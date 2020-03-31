@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import './assets/css/style.scss'
+import VueCarousel from '@chenfengyuan/vue-carousel';
 
+Vue.component(VueCarousel.name, VueCarousel);
 Vue.config.productionTip = false
 
 new Vue({

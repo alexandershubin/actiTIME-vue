@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <Slider
-      :slider_data="sliderItems"
-      />
+    <Slider/>
     <Footer/>
   </div>
 </template>
@@ -17,18 +15,8 @@ export default {
   name: 'App',
   components: {
     Header,
-    Footer,
-    Slider
-  },
-  data() {
-    return {
-      sliderItems: [
-        { id: 1, name: 'img1', img: 'logo.png' },
-        { id: 1, name: 'img1', img: 'logo.png' },
-        { id: 1, name: 'img1', img: 'logo.png' },
-        { id: 1, name: 'img1', img: 'logo.png' }
-      ]
-    }
+    Slider,
+    Footer
   }
 }
 </script>
