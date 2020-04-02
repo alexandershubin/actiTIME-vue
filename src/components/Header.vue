@@ -4,18 +4,18 @@
     <div class="header__body">
       <a href="logo" class="header__logo"><span class="visually-hidden">logo</span></a>
 
-      <div class="header__burger">
+      <div class="header__burger" @click="click" v-bind:class="{ active: isActive }">
         <span></span>
       </div>
 
-      <nav class="header__menu">
+      <nav class="header__menu" v-bind:class="{ active: isActive }">
         <ul class="header__list">
           <li class="header__item">
             <a href="about.html" class="header__link">About</a>
           </li>
-          <li class="header__item header__item--arrow">
+          <li class="header__item header__item--arrow" @click="open">
             <a href="" class="header__link">Help</a>
-            <div class="arrow">
+            <div class="arrow" v-bind:class="{ active: show }">
               <span class="visually-hidden">открыть</span>
               <svg class="arrow__small" width="10" height="6" viewBox="0 0 10 6" fill="#212353"
                    xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
                       fill="#212353"/>
               </svg>
             </div>
-            <ul class="sub-menu">
+            <ul class="sub-menu" v-bind:class="{ active: show }">
               <li class="sub-menu__item">
                 <a class="sub-menu__link" href="#User">User Guide</a>
               </li>
@@ -49,6 +49,21 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    data() {
+      return {
+        isActive:false,
+        show:false
+      };
+    },
+    methods: {
+      click () {
+        this.isActive ? this.isActive = false : this.isActive = true
+      },
+      open () {
+        this.show ? this.show = false : this.show = true
+      }
+    }
+  }
 </script>
 
