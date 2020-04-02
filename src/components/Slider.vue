@@ -1,5 +1,10 @@
 <template>
 <main class="main">
+ <section class="features">
+    <h2 class="visually-hidden">Features</h2>
+    <h2 class="features__header">Features</h2>
+    <p class="features__description">Some of the features and advantages that we provide for those of
+      you who store data in this Data Warehouse.</p>
   <div class="slider">
     <carousel :responsive="{0:{items:1,nav:false},1200:{items:2,nav:false}}" :margin='10'>
       <div class="slider__item">
@@ -57,6 +62,7 @@
       </div>
     </carousel>
   </div>
+  </section>
   </main>
 </template>
 <script>
