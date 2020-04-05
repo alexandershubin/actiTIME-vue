@@ -30,11 +30,11 @@
   letter-spacing: 0.005em;
 
   color: #212353;
-
-  svg {
+  &:after {
+    content: url(../img/arrow-link.svg);
     position: absolute;
-    top: 10%;
-    right: -55%;
+    top: 0;
+    right: -50%;
   }
 }
 
@@ -54,7 +54,7 @@
   min-height: 358px;
 }
 
-.slider__item--new {
+.slider__item:nth-child(2) {
   position: relative;
 
   &:before {
