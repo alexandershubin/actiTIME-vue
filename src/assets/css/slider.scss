@@ -3,7 +3,7 @@
   max-width: 682px;
   width: 100%;
   margin: 0 auto;
-  padding: 28px 0 25px;
+  padding: 30px 0 25px;
 }
 
 .slider__header {
@@ -18,7 +18,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 26px;
-  margin: 30px 0 25px;
+  margin: 28px 0 22px;
   color: #4B5D68;
 }
 
@@ -30,11 +30,11 @@
   letter-spacing: 0.005em;
 
   color: #212353;
-
-  svg {
+  &:after {
+    content: url(../img/arrow-link.svg);
     position: absolute;
-    top: 5%;
-    right: -55%;
+    top: 0;
+    right: -50%;
   }
 }
 
@@ -48,13 +48,13 @@
   box-shadow: 0px 10px 0px #F5BD3F;
   border-radius: 50px;
   max-width: 280px;
-  padding: 53px 16px 40px 30px;
+  padding: 50px 16px 0px 31px;
   margin: 10px auto;
   box-sizing: border-box;
   min-height: 358px;
 }
 
-.slider__item--new {
+.slider__item:nth-child(2) {
   position: relative;
 
   &:before {
@@ -69,16 +69,15 @@
     color: #FFFFFF;
     width: 69px;
     height: 34px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    text-align: center;
     align-items: center;
   }
 }
 
 //  style for nav
-.owl-carousel.owl-theme.slider .owl-dots {
-  text-align: center;
-  margin-top: 38px !important;
+.slider .owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 37px
 }
 
 .owl-theme .owl-dots .owl-dot {
@@ -104,15 +103,16 @@
 @media (min-width: 682px) {
   .slider {
     max-width: 682px;
-    padding: 88px 40px 51px 50px;
+    padding: 88px 40px 50px 50px;
     box-sizing: border-box;
     border-radius: 50px;
     counter-reset: myCounter;
   }
 
-  .owl-carousel.owl-theme .owl-dots {
+  .slider .owl-theme .owl-nav.disabled + .owl-dots {
     text-align: left;
-    margin-left: 60px;
+    margin-left: 0px;
+    margin-top: 43px;
   }
 
   .slider__item {
@@ -135,12 +135,6 @@
     }
   }
 
-  .owl-carousel.owl-theme.slider .owl-dots {
-    text-align: left;
-    margin-top: 48px;
-    margin-left: 5px;
-  }
-
   .slider__item--new {
 
     &:before {
@@ -156,6 +150,10 @@
     box-sizing: border-box;
   }
 
+  .slider__description {
+    margin: 28px 0 25px;
+  }
+
   .slider__item {
     &:after {
       left: -17%;
@@ -167,5 +165,10 @@
     &:before {
       left: 30%;
     }
+  }
+
+  .slider .owl-theme .owl-nav.disabled + .owl-dots {
+    margin-left: -18px;
+    margin-top: 45px;
   }
 }
